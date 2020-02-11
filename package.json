@@ -1,0 +1,22 @@
+{
+  "name": "apex-status-bot",
+  "version": "1.0.0",
+  "description": "A discord bot that changes a user's role based on whether he's playing Apex.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/augusdogus/mcstatusbot.git"
+  },
+  "author": "Augie Luebbers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/augusdogus/apex-status-bot/issues"
+  },
+  "homepage": "https://github.com/augusdogus/apex-status-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
