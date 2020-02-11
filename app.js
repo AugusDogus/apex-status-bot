@@ -16,14 +16,14 @@ client.on('ready', () => {
                 process.env.roleID = role.id;
             }).catch(error => {
                 if (error == 'DiscordAPIError: Missing Permissions') {
-                    console.error('Please give the bot Administrator privileges and restart.')
+                    console.error('Please give the bot Administrator privileges and restart.');
                 }
-            })
+            });
         } else {
             process.env.roleID = guild.roles.find(role => role.name === 'Playing Apex').id;
         }
     } else {
-        console.error('Please add the bot to your server and restart.')
+        console.error('Please add the bot to your server and restart.');
     }
     // Set our status
     client.user.setPresence({game: {name: 'Apex Legends'}, status: 'online'});
