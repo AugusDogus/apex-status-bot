@@ -43,7 +43,12 @@ client.on('presenceUpdate', (old, member,) => {
     if (old.presence.game) {
         // Check if the game was Apex Legends
         if (old.presence.game.name === 'Apex Legends') {
-            member.removeRole(process.env.roleID);
+            // Make sure they're not still playing Apex Legends
+            if (member.presence.game) {
+                if (member.presence.game.name !== 'Apex Legends') {
+                    member.removeRole(process.env.roleID);
+                }
+            }
         }
     }
 });
