@@ -27,10 +27,22 @@ client.on('ready', () => {
     }
     // Set our status
     client.user.setPresence({game: {name: 'Apex Legends'}, status: 'online'});
+
+    // Check all users to see if anyone was playing before we started the bot.
+    guild.members.forEach((member) => {
+        // Check if they started playing a game
+        if (member.presence.game) {
+            // Check if the game is Apex Legends
+            if (member.presence.game.name === 'Apex Legends') {
+                // Give them the Playing Apex role
+                member.addRole(process.env.roleID);
+            }
+        }
+    });
 });
 
 // Check status
-client.on('presenceUpdate', (old, member,) => {
+client.on('presenceUpdate', (old, member) => {
     // Check if they started playing a game
     if (member.presence.game) {
         // Check if the game is Apex Legends
