@@ -60,6 +60,8 @@ client.on('presenceUpdate', (old, member) => {
                 if (member.presence.game.name !== 'Apex Legends') {
                     member.removeRole(process.env.roleID);
                 }
+            } else {
+                member.removeRole(process.env.roleID);
             }
         }
     }
